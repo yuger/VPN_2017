@@ -236,7 +236,6 @@ public class OpenVpnManagementThread implements Runnable, OpenVPNManagement {
             }
         } else if (command.startsWith("SUCCESS:")) {
             /* Ignore this kind of message too */
-            return;
         } else if (command.startsWith("PROTECTFD: ")) {
             FileDescriptor fdtoprotect = mFDList.pollFirst();
             if (fdtoprotect != null) protectFileDescriptor(fdtoprotect);
@@ -284,9 +283,8 @@ public class OpenVpnManagementThread implements Runnable, OpenVPNManagement {
         VpnStatus.logMessageOpenVPN(level, ovpnlevel, msg);
     }
 
-    boolean shouldBeRunning() {
-        if (mPauseCallback == null) return false;
-        else return mPauseCallback.shouldBeRunning();
+    private boolean shouldBeRunning() {
+        return mPauseCallback != null && mPauseCallback.shouldBeRunning();
     }
 
     private void handleHold(String argument) {

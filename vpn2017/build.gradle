@@ -1,16 +1,15 @@
 apply plugin: 'com.android.application'
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 25
-        versionCode 30
-        versionName "0.3"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 42
+        versionName "0.4.2"
         applicationId "com.wxy.vpn2017"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
     buildTypes {
         release {
@@ -20,13 +19,24 @@ android {
         }
     }
 }
+android.lintOptions {
+    disable 'MissingTranslation'//, 'ManifestResource'
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.1.1'
-//    compile 'com.android.support:design:25.1.1'
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    compile 'com.android.support:design:26.0.0-alpha1'
     testCompile 'junit:junit:4.12'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+
+//    compile project (':Contact')
+//    compile 'com.facebook.rebound:rebound:0.3.8' // http://facebook.github.io/rebound/
+
+//    compile 'com.klinkerapps:link_builder:1.5.2'  // https://github.com/klinker24/Android-TextView-LinkBuilder
+
+    compile 'com.github.joaquimley:faboptions:1.1.2' // https://github.com/JoaquimLey/faboptions
 }

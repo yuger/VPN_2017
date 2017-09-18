@@ -1,1 +1,1 @@
-include ':vpn2017', ':MqSdk'
+include ':vpn2017', ':Contact'

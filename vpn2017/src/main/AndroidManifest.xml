@@ -3,9 +3,17 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
 
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true"/>
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -16,26 +24,38 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                    android:host="www.wangxingyu.com"
+                    android:pathPrefix="/"
+                    android:scheme="http"/>
             </intent-filter>
         </activity>
 
         <activity
             android:name="de.blinkt.openvpn.VpnAuthActivity"
             android:excludeFromRecents="true"
+            android:label="@string/click_again"
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:taskAffinity=".DisconnectVPN"
-            android:theme="@style/Theme.AppCompat.Light.Dialog"/><!--android:autoRemoveFromRecents="true"-->
+            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"/><!--android:autoRemoveFromRecents="true"-->
 
         <activity
             android:name="de.blinkt.openvpn.DisconnectVPNActivity"
             android:excludeFromRecents="true"
+            android:label="Disconnect"
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:taskAffinity=".DisconnectVPN"
-            android:theme="@style/Theme.AppCompat.Light.Dialog"/>
+            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"/><!--断开连接的确认对话框，实际是一个Activity-->
 
         <service
             android:name="de.blinkt.openvpn.core.OpenVPNService"

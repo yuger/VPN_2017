@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,10 +14,34 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@null"/>
 
-    <Button
+    <com.wxy.vpn.CuboidButton
+        android:id="@+id/btn_circle"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerInParent="true"
+        android:text="@string/connect_vpn"
+        android:textColor="@android:color/white"
+        app:cub_border_color="@color/color_F57C00"
+        app:cub_border_radius="4dp"
+        app:cub_color="@color/color_FF9800"
+        app:cub_hover_color="@color/color_FF5722"
+        app:cub_riple_effect="true"/>
+
+    <!--<android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:onClick="connectVPN"
-        android:text="连接VPN"/>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp"
+        app:rippleColor="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_more_vert_black_24dp"/>-->
+
+    <com.joaquimley.faboptions.FabOptions
+        android:id="@+id/fab_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:button_menu="@menu/menu_botton"/>
 </RelativeLayout>
