@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_rate_app"
+        android:icon="@drawable/ic_rate_app_24dp"
+        android:title="Rate this App" />
+
+    <item
+        android:id="@+id/item_more_apps"
+        android:icon="@drawable/ic_more_apps_24dp"
+        android:title="More Apps" />
+
+    <item
+        android:id="@+id/item_contact"
+        android:icon="@drawable/ic_chat_24dp"
+        android:title="Contact us" />
+
+
+    <item
+        android:id="@+id/item_private_policy"
+        android:icon="@drawable/ic_private_policy_24dp"
+        android:title="Private Policy" />
+</menu>
