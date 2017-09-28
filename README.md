@@ -5,6 +5,8 @@ OpenVpn Android client, simplified from [ics-openvpn](https://github.com/schwabe
 You should prepare your own `client.ovpn` file in the assets folder.
 And you may translate the OpenVPN Android client into your native language. 
 
+![](https://github.com/yuger/VPN_2017/blob/master/vpn2017/art/screenshot.jpg)
+
 License
 ---------------------------------
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://img.shields.io/badge/License-GPL%20v2-blue.svg)
