@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void startVpn() {
         String config = "";
         try {
-            InputStream conf = getAssets().open("client.bin");// TODO replace your own authentication file in /assets/client.bin
+            InputStream conf = getAssets().open("client.ovpn");// TODO replace your own authentication file in /assets/client.bin
             InputStreamReader isr = new InputStreamReader(conf);
             BufferedReader br = new BufferedReader(isr);
             String line;
